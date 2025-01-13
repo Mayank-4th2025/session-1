@@ -1,25 +1,35 @@
-# Base class Animal
-class Animal:
-    def makeSound(self):
-        print("Some generic animal sound")
+// Base class
+class Animal {
+    public String makeSound() {
+        return "Some generic animal sound";
+    }
+}
 
-# Derived class Dog
-class Dog(Animal):
-    def makeSound(self):
-        print("Woof!")
+// Derived class Dog
+class Dog extends Animal {
+    @Override
+    public String makeSound() {
+        return "Woof!";
+    }
+}
 
-# Derived class Cat
-class Cat(Animal):
-    def makeSound(self):
-        print("Meow!")
+// Derived class Cat
+class Cat extends Animal {
+    @Override
+    public String makeSound() {
+        return "Meow!";
+    }
+}
 
-# Demonstrating polymorphism
-def demonstrate_polymorphism():
-    # Create an Animal reference to a Dog object
-    animal1 = Dog()
-    # Create an Animal reference to a Cat object
-    animal2 = Cat()
+// Main class to demonstrate polymorphism
+public class Main {
+    public static void main(String[] args) {
+        // Create instances of Dog and Cat
+        Animal myDog = new Dog();
+        Animal myCat = new Cat();
 
-    # Both references call the overridden makeSound() method
-    animal1.makeSound()  # Outputs: Woof!
-    animal2.ma
+        // Call the overridden makeSound() method
+        System.out.println(myDog.makeSound()); // Outputs: Woof!
+        System.out.println(myCat.makeSound()); // Outputs: Meow!
+    }
+}
