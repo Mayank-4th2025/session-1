@@ -1,0 +1,25 @@
+# Base class Animal
+class Animal:
+    def makeSound(self):
+        print("Some generic animal sound")
+
+# Derived class Dog
+class Dog(Animal):
+    def makeSound(self):
+        print("Woof!")
+
+# Derived class Cat
+class Cat(Animal):
+    def makeSound(self):
+        print("Meow!")
+
+# Demonstrating polymorphism
+def demonstrate_polymorphism():
+    # Create an Animal reference to a Dog object
+    animal1 = Dog()
+    # Create an Animal reference to a Cat object
+    animal2 = Cat()
+
+    # Both references call the overridden makeSound() method
+    animal1.makeSound()  # Outputs: Woof!
+    animal2.ma
