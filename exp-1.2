@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input two strings representing numbers
+        System.out.print("Enter the first number: ");
+        String firstNumberStr = scanner.nextLine();
+        System.out.print("Enter the second number: ");
+        String secondNumberStr = scanner.nextLine();
+
+        // Convert strings to wrapper classes
+        try {
+            // Convert to Integer for addition, subtraction, and multiplication
+            Integer firstNumber = Integer.valueOf(firstNumberStr);
+            Integer secondNumber = Integer.valueOf(secondNumberStr);
+
+            // Perform basic arithmetic operations
+            System.out.println("Addition: " + (firstNumber + secondNumber));
+            System.out.println("Subtraction: " + (firstNumber - secondNumber));
+            System.out.println("Multiplication: " + (firstNumber * secondNumber));
+
+            // For division, we will convert to Double to handle decimal results
+            Double firstNumberDouble = Double.valueOf(firstNumberStr);
+            Double secondNumberDouble = Double.valueOf(secondNumberStr);
+
+            if (secondNumberDouble != 0) {
+                System.out.println("Division: " + (firstNumberDouble / secondNumberDouble));
+            } else {
+                System.out.println("Division: Cannot divide by zero.");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Please enter valid numbers.");
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}
